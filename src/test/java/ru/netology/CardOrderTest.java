@@ -19,6 +19,11 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class CardOrderTest {
 
+    @BeforeAll
+    static void setupClass() {
+        WebDriverManager.chromedriver().setup();
+    }
+
     public String generateDate(int Days) {
         return LocalDate.now().plusDays(Days).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
     }
